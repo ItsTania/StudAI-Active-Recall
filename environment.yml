@@ -1,0 +1,10 @@
+name: studai-env
+channels:
+  - defaults
+dependencies:
+  - python==3.8
+  - pip:
+      - flask
+      - requests
+      - openai
+      - pydantic
