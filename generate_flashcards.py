@@ -7,7 +7,7 @@ def split_text(text):
     return "" ## TODO: Split a long text into smaller chunks by topic
 
 def generate_prompt(text):
-    return f"Summarize into key points, provide a matching question for each key point: {text}"
+    return f"Summarize into key points and provide a matching question. Format your response as list of JSON objects mapping the key point to the matching question: {text}"
 
 def get_gpt3_output(input, max_token_relative=False, model_name="text-davinci-003"):
     # Set the max tokens to 200 or 4000 - the length of the input 

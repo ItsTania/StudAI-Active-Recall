@@ -25,7 +25,7 @@ openai.api_key = settings.OPENAI_API_KEY
 def index():
     if request.method == "POST":
         input = request.form["input"]
-        response = get_gpt3_output(input, max_token_relative=False, model_name="text-davinci-003")
+        response = get_gpt3_output(input, max_token_relative=True, model_name="text-davinci-003")
         result=output_to_text(response.choices[0].text)
         return redirect(url_for("index", result=result))
 
