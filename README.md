@@ -2,7 +2,7 @@
 
 Thi project aims to augment the study of texts by summarising and automatically generating active recall flash cards.
 
-![Alt text](images/example_UI.png)
+![Alt text](images/UI.png)
 
 ## Quick Start
 
