@@ -24,5 +24,6 @@ After cloning the repo, do the following to get started!
    $ flask run
    ```
 
+--------
 
-The project extend's the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Flask](https://flask.palletsprojects.com/en/2.0.x/) web framework. 
+The project extends the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Flask](https://flask.palletsprojects.com/en/2.0.x/) web framework. 
