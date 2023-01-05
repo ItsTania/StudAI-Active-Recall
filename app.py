@@ -5,7 +5,7 @@ from flask import Flask, redirect, render_template, request, url_for
 
 from pydantic import BaseSettings
 
-from generate_flashcards import generate_prompt, get_result
+from generate_flashcards import get_gpt3_output, output_to_text
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -25,9 +25,9 @@ openai.api_key = settings.OPENAI_API_KEY
 def index():
     if request.method == "POST":
         input = request.form["input"]
-        response = get_result(input, max_token_relative=False, model_name="text-davinci-003")
-
-        return redirect(url_for("index", result=response.choices[0].text))
+        response = get_gpt3_output(input, max_token_relative=False, model_name="text-davinci-003")
+        result=output_to_text(response.choices[0].text)
+        return redirect(url_for("index", result=result))
 
     result = request.args.get("result")
     return render_template("index.html", result=result)

@@ -9,7 +9,7 @@ def split_text(text):
 def generate_prompt(text):
     return f"Summarize into key points, provide a matching question for each key point: {text}"
 
-def get_result(input, max_token_relative=False, model_name="text-davinci-003"):
+def get_gpt3_output(input, max_token_relative=False, model_name="text-davinci-003"):
     # Set the max tokens to 200 or 4000 - the length of the input 
     max_tokens = 4000 - len(input) if max_token_relative else 200
     # Generate the prompt
@@ -22,6 +22,9 @@ def get_result(input, max_token_relative=False, model_name="text-davinci-003"):
         max_tokens=max_tokens
     )
     return summary
+
+def output_to_text(output):
+    return output ## TODO: Convert the output into a text format
 
 def export_results(results):
     return "" ## TODO: Export the results into a flashcard format
